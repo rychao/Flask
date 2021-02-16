@@ -1,10 +1,12 @@
 import sys
 import requests
 import json
+from flask import Flask, jsonify
+app = Flask(__name__)
 
-# Retrieves data in json format and prints list
-def weather(apikey):
-    base_url = 'http://api.airvisual.com/v2/city?city=Los%20Angeles&state=California&country=USA&key={}'.format(apikey)
+@app.route('/losangeles')
+def weather():
+    base_url = 'http://api.airvisual.com/v2/city?city=Los%20Angeles&state=California&country=USA&key=<REDACTED>'#.format(apikey)
     s = requests.Session()
     requests.packages.urllib3.disable_warnings()
 
@@ -14,12 +16,9 @@ def weather(apikey):
     return resp
 
 if __name__ == '__main__':
-    sys.argv[:]
-    result = weather(sys.argv[1])
-    print(result)
-
-    # column = list(result.keys())
-    # print(column)
+    # sys.argv[:]
+    # app.config['apikey'] = sys.argv[1] pass into sysargv?
+    app.run()
 
 # Do readme for flaskenv keys
 # Put results into postgres w/ riot script
