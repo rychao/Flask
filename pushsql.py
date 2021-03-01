@@ -4,7 +4,7 @@ import psycopg2
 import requests
 
 def get_weather(api_key, connection):
-    url = 'http://api.airvisual.com/v2/city?city=Los%20Angeles&state=California&country=USA&key={}'.format(api_key)
+    url = 'http://api.airvisual.com/v2/city?city=San%20Francisco&state=California&country=USA&key={}'.format(api_key)
     s = requests.Session()
     requests.packages.urllib3.disable_warnings()
     req = s.get(url, verify=False)
