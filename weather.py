@@ -32,10 +32,3 @@ def sf():
 
 if __name__ == '__main__':
     app.run()
-
-# app.config['apikey'] = sys.argv[1] pass into sysargv?
-# query_db("select * from los_angeles_weather limit %s", (1,), False)
-
-# Do readme for flaskenv keys
-# Put results into postgres w/ riot script
-# pull into api layer w/ flask?
